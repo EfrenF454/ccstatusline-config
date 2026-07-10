@@ -5,11 +5,11 @@
 </p>
 
 <p align="center">
-  <a href="#-vista-previa">Vista previa</a> •
-  <a href="#-requisitos">Requisitos</a> •
-  <a href="#-instalación-rápida">Instalación</a> •
-  <a href="#-personalizar">Personalizar</a> •
-  <a href="#-desinstalar">Desinstalar</a>
+  <a href="#-características">Características</a> •
+  <a href="#-instalación">Instalación</a> •
+  <a href="#-uso">Uso</a> •
+  <a href="#-tecnologías">Tecnologías</a> •
+  <a href="#-contribuir">Contribuir</a>
 </p>
 
 <p align="center">
@@ -21,18 +21,27 @@
 
 ---
 
-## 🎨 ¿Qué es esto?
+## 🦉 ¿Qué es esto?
 
-Una configuración lista para copiar de la **barra de estado (statusline)** de
-[**Claude Code**](https://claude.com/claude-code), construida sobre
+**Statusline Config** es una configuración lista para copiar de la **barra de estado**
+(*statusline*) de [**Claude Code**](https://claude.com/claude-code), construida sobre
 [**ccstatusline**](https://github.com/sirmalloc/ccstatusline).
 
-Clona el repo, corre un comando y tendrás **exactamente la misma barra que yo**:
-mismos íconos, mismos colores, tema oscuro estilo GitHub. Sin configurar nada a mano.
+¿Quieres la misma barra bonita que se ve en mi terminal, sin pelearte con archivos de
+configuración? Clona el repo, corre **un comando** y listo:
+
+- 📋 **Copia** = Un solo `install.sh` deja todo configurado
+- 🎨 **Idéntica** = Mismos íconos, colores y tema oscuro estilo GitHub
+- 🔄 **Reversible** = Respalda tu config previa antes de tocar nada
+
+¡Así de fácil!
 
 ---
 
-## 👀 Vista previa
+## ✨ Características
+
+### 📊 Todo lo que importa, de un vistazo
+La barra muestra en una sola línea:
 
 ```
 📁 ~/mi-proyecto  🦉 Opus 4.8  🧠 42%  💪 high  🌿 main  ⏳ 1h23m
@@ -47,6 +56,21 @@ mismos íconos, mismos colores, tema oscuro estilo GitHub. Sin configurar nada a
 | 🌿 | Rama de git actual (solo dentro de un repo) | 🟣 `#d2a8ff` |
 | ⏳ | Temporizador del bloque de trabajo | ⚪ `#8b949e` |
 
+### 🎨 Tema oscuro cuidado
+- Paleta de colores estilo GitHub Dark
+- Íconos con emojis para lectura rápida
+- Separadores limpios entre cada elemento
+
+### ⚡ Instalador de un comando
+- Copia la configuración al lugar correcto automáticamente
+- Engancha la statusline en Claude Code por ti
+- Respalda tu configuración anterior por si acaso
+
+### 🔧 Cero dependencias raras
+- Solo necesitas Node.js (que ya tienes si usas Claude Code)
+- Sin compilar, sin instalar mil paquetes
+- `npx` descarga ccstatusline la primera vez
+
 ---
 
 ## 📦 Requisitos
@@ -56,7 +80,7 @@ mismos íconos, mismos colores, tema oscuro estilo GitHub. Sin configurar nada a
 
 ---
 
-## ⚡ Instalación rápida
+## 🚀 Instalación
 
 ```bash
 git clone https://github.com/Avzolem/ccstatusline-config.git
@@ -71,15 +95,12 @@ El instalador:
    *(respaldando cualquier config previa que ya tengas).*
 2. 🔗 Engancha la statusline en tu `~/.claude/settings.json`.
 
-Después **reinicia Claude Code** y la barra aparecerá. La primera vez, `npx`
-descargará `ccstatusline` automáticamente. ✨
-
----
-
-## 🛠️ Instalación manual
+Después **reinicia Claude Code** y la barra aparecerá. ✨
 
 <details>
-<summary>Si prefieres hacerlo paso a paso</summary>
+<summary>🛠️ ¿Prefieres instalar a mano?</summary>
+
+<br>
 
 **1. Instala ccstatusline** *(opcional — `npx` también funciona sin instalar):*
 
@@ -115,25 +136,49 @@ cp ccstatusline-settings.json ~/.config/ccstatusline/settings.json
 
 ---
 
-## 🎛️ Personalizar
+## 🎛️ Uso
 
-`ccstatusline` trae un **editor interactivo** en la terminal para cambiar íconos,
-colores, orden, separadores, modo powerline y más:
+Una vez instalada, la barra aparece sola debajo de tu terminal de Claude Code. Para
+**personalizarla** (cambiar íconos, colores, orden, separadores, modo powerline…),
+ccstatusline trae un editor interactivo:
 
 ```bash
 npx ccstatusline@latest
 ```
 
 Todo se guarda en `~/.config/ccstatusline/settings.json` (el mismo archivo de este
-repo). Si haces cambios que te gusten, cópialos de vuelta a
-`ccstatusline-settings.json` y súbelos. 🚀
+repo). Si haces cambios que te gusten, cópialos de vuelta a `ccstatusline-settings.json`
+y súbelos. 🚀
+
+### 🗑️ Desinstalar
+Quita el bloque `"statusLine"` de `~/.claude/settings.json` y, si quieres, borra
+`~/.config/ccstatusline/settings.json`. Reinicia Claude Code.
 
 ---
 
-## 🗑️ Desinstalar
+## 🧰 Tecnologías
 
-Quita el bloque `"statusLine"` de `~/.claude/settings.json` y, si quieres, borra
-`~/.config/ccstatusline/settings.json`. Reinicia Claude Code.
+<p align="center">
+  <img src="https://img.shields.io/badge/ccstatusline-000000?style=for-the-badge&logo=node.js&logoColor=white" alt="ccstatusline"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js"/>
+  <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white" alt="Bash"/>
+  <img src="https://img.shields.io/badge/Claude_Code-D97757?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude Code"/>
+</p>
+
+- **[ccstatusline](https://github.com/sirmalloc/ccstatusline)** — motor de la barra de estado
+- **Node.js / npx** — ejecución del binario
+- **Bash** — script de instalación
+
+---
+
+## 🤝 Contribuir
+
+¿Se te ocurre una mejora o una variante de la barra? ¡Bienvenida!
+
+1. Haz un fork del repo
+2. Crea tu rama (`git checkout -b mi-mejora`)
+3. Haz commit de tus cambios
+4. Abre un Pull Request
 
 ---
 
