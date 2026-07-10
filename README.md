@@ -1,34 +1,62 @@
-# Claude Code · Statusline Config
+<h1 align="center">🦉 Statusline Config</h1>
 
-Mi configuración de la barra de estado (statusline) de **Claude Code**, basada en
-[**ccstatusline**](https://github.com/sirmalloc/ccstatusline). Copia este repo y tendrás
-la misma barra que yo, con los mismos íconos y colores.
+<p align="center">
+  <strong>Mi barra de estado para Claude Code — cópiala y tenla igual en tu terminal</strong>
+</p>
 
-## Vista previa
+<p align="center">
+  <a href="#-vista-previa">Vista previa</a> •
+  <a href="#-requisitos">Requisitos</a> •
+  <a href="#-instalación-rápida">Instalación</a> •
+  <a href="#-personalizar">Personalizar</a> •
+  <a href="#-desinstalar">Desinstalar</a>
+</p>
 
-La barra muestra, en una sola línea, con tema oscuro estilo GitHub:
-
-```
-📁 ~/mi-proyecto | 🦉 Opus 4.8 | 🧠 42% | 💪 high | 🌿 main | ⏳ 1h23m
-```
-
-| Ícono | Qué muestra | Color |
-|-------|-------------|-------|
-| 📁 | Directorio de trabajo actual (con `~` para home) | Azul `#79c0ff` |
-| 🦉 | Modelo activo | Verde `#79d9a0` |
-| 🧠 | Porcentaje de contexto usado | Verde claro `#7ee787` |
-| 💪 | Nivel de esfuerzo de razonamiento (thinking effort) | Amarillo `#e3b341` |
-| 🌿 | Rama de git actual (solo dentro de un repo) | Morado `#d2a8ff` |
-| ⏳ | Temporizador del bloque de trabajo | Gris `#8b949e` |
+<p align="center">
+  <img src="https://img.shields.io/badge/Claude_Code-D97757?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude Code"/>
+  <img src="https://img.shields.io/badge/ccstatusline-2.2+-000000?style=for-the-badge&logo=node.js&logoColor=white" alt="ccstatusline"/>
+  <img src="https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js"/>
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License"/>
+</p>
 
 ---
 
-## Requisitos
+## 🎨 ¿Qué es esto?
+
+Una configuración lista para copiar de la **barra de estado (statusline)** de
+[**Claude Code**](https://claude.com/claude-code), construida sobre
+[**ccstatusline**](https://github.com/sirmalloc/ccstatusline).
+
+Clona el repo, corre un comando y tendrás **exactamente la misma barra que yo**:
+mismos íconos, mismos colores, tema oscuro estilo GitHub. Sin configurar nada a mano.
+
+---
+
+## 👀 Vista previa
+
+```
+📁 ~/mi-proyecto  🦉 Opus 4.8  🧠 42%  💪 high  🌿 main  ⏳ 1h23m
+```
+
+| Ícono | Muestra | Color |
+|:-----:|---------|-------|
+| 📁 | Directorio de trabajo actual (con `~` para tu home) | 🔵 `#79c0ff` |
+| 🦉 | Modelo activo | 🟢 `#79d9a0` |
+| 🧠 | Porcentaje de contexto usado | 🟩 `#7ee787` |
+| 💪 | Nivel de esfuerzo de razonamiento (*thinking effort*) | 🟡 `#e3b341` |
+| 🌿 | Rama de git actual (solo dentro de un repo) | 🟣 `#d2a8ff` |
+| ⏳ | Temporizador del bloque de trabajo | ⚪ `#8b949e` |
+
+---
+
+## 📦 Requisitos
 
 - **Node.js 18+** (incluye `npm` y `npx`) → https://nodejs.org
-- **Claude Code** instalado
+- **[Claude Code](https://claude.com/claude-code)** instalado
 
-## Instalación rápida (recomendada)
+---
+
+## ⚡ Instalación rápida
 
 ```bash
 git clone https://github.com/Avzolem/ccstatusline-config.git
@@ -37,22 +65,23 @@ chmod +x install.sh
 ./install.sh
 ```
 
-El script:
+El instalador:
 
-1. Copia `ccstatusline-settings.json` a `~/.config/ccstatusline/settings.json`
-   (respaldando cualquier config previa que tengas).
-2. Engancha la statusline en tu `~/.claude/settings.json`.
+1. 📋 Copia `ccstatusline-settings.json` a `~/.config/ccstatusline/settings.json`
+   *(respaldando cualquier config previa que ya tengas).*
+2. 🔗 Engancha la statusline en tu `~/.claude/settings.json`.
 
 Después **reinicia Claude Code** y la barra aparecerá. La primera vez, `npx`
-descargará `ccstatusline` automáticamente.
+descargará `ccstatusline` automáticamente. ✨
 
 ---
 
-## Instalación manual
+## 🛠️ Instalación manual
 
-Si prefieres hacerlo a mano:
+<details>
+<summary>Si prefieres hacerlo paso a paso</summary>
 
-**1. Instala ccstatusline** (opcional, `npx` también funciona sin instalar):
+**1. Instala ccstatusline** *(opcional — `npx` también funciona sin instalar):*
 
 ```bash
 npm install -g ccstatusline@latest
@@ -65,8 +94,7 @@ mkdir -p ~/.config/ccstatusline
 cp ccstatusline-settings.json ~/.config/ccstatusline/settings.json
 ```
 
-**3. Engancha la statusline en Claude Code.** Edita `~/.claude/settings.json` y
-añade el bloque `statusLine`:
+**3. Engancha la statusline** en `~/.claude/settings.json`:
 
 ```json
 {
@@ -77,35 +105,43 @@ añade el bloque `statusLine`:
 }
 ```
 
-> Si instalaste ccstatusline global y quieres arranque instantáneo (sin el pequeño
-> retraso de `npx`), usa en su lugar la ruta del binario, por ejemplo:
-> `"command": "~/.npm-global/bin/ccstatusline"` (ajústala a la salida de
-> `which ccstatusline`).
+> 💡 Si instalaste ccstatusline global y quieres arranque instantáneo (sin el
+> pequeño retraso de `npx`), usa la ruta del binario, p. ej.:
+> `"command": "~/.npm-global/bin/ccstatusline"` (ajústala según `which ccstatusline`).
 
 **4. Reinicia Claude Code.**
 
+</details>
+
 ---
 
-## Personalizar
+## 🎛️ Personalizar
 
-`ccstatusline` incluye un editor interactivo en la terminal para cambiar íconos,
-colores, orden de los elementos, separadores, modo powerline, etc.:
+`ccstatusline` trae un **editor interactivo** en la terminal para cambiar íconos,
+colores, orden, separadores, modo powerline y más:
 
 ```bash
 npx ccstatusline@latest
 ```
 
-Los cambios se guardan en `~/.config/ccstatusline/settings.json` (el mismo archivo
-de este repo). Si haces cambios que te gustan, cópialos de vuelta a
-`ccstatusline-settings.json` y súbelos.
+Todo se guarda en `~/.config/ccstatusline/settings.json` (el mismo archivo de este
+repo). Si haces cambios que te gusten, cópialos de vuelta a
+`ccstatusline-settings.json` y súbelos. 🚀
 
 ---
 
-## Desinstalar
+## 🗑️ Desinstalar
 
 Quita el bloque `"statusLine"` de `~/.claude/settings.json` y, si quieres, borra
 `~/.config/ccstatusline/settings.json`. Reinicia Claude Code.
 
-## Créditos
+---
 
-Barra construida sobre [ccstatusline](https://github.com/sirmalloc/ccstatusline).
+## 🙏 Créditos
+
+Barra construida sobre [**ccstatusline**](https://github.com/sirmalloc/ccstatusline)
+de [@sirmalloc](https://github.com/sirmalloc).
+
+<p align="center">
+  <sub>Hecho con 🦉 por <a href="https://github.com/Avzolem">@Avzolem</a></sub>
+</p>
