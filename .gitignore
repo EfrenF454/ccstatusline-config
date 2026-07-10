@@ -1,0 +1,7 @@
+# Respaldos generados por el instalador
+*.bak
+*.bak.*
+
+# Ruido de sistema
+.DS_Store
+node_modules/

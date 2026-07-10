@@ -1,0 +1,111 @@
+{
+  "version": 3,
+  "lines": [
+    [
+      {
+        "id": "dir-icon",
+        "type": "custom-text",
+        "customText": "📁 ",
+        "merge": "no-padding",
+        "color": "hex:79c0ff"
+      },
+      {
+        "id": "dir",
+        "type": "current-working-dir",
+        "rawValue": true,
+        "color": "hex:79c0ff",
+        "metadata": {
+          "abbreviateHome": "true"
+        }
+      },
+      {
+        "id": "m-icon",
+        "type": "custom-text",
+        "customText": "🦉 ",
+        "merge": "no-padding",
+        "color": "hex:79d9a0"
+      },
+      {
+        "id": "model",
+        "type": "model",
+        "rawValue": true,
+        "color": "hex:79d9a0"
+      },
+      {
+        "id": "ctx-icon",
+        "type": "custom-text",
+        "customText": "🧠 ",
+        "merge": "no-padding",
+        "color": "hex:7ee787"
+      },
+      {
+        "id": "ctx",
+        "type": "context-percentage",
+        "rawValue": true,
+        "color": "hex:7ee787"
+      },
+      {
+        "id": "eff-icon",
+        "type": "custom-text",
+        "customText": "💪 ",
+        "merge": "no-padding",
+        "color": "hex:e3b341"
+      },
+      {
+        "id": "eff",
+        "type": "thinking-effort",
+        "rawValue": true,
+        "color": "hex:e3b341"
+      },
+      {
+        "id": "git",
+        "type": "custom-command",
+        "commandPath": "d=$(sed -n 's/.*\"cwd\":\"\\([^\"]*\\)\".*/\\1/p'); [ -n \"$d\" ] && cd \"$d\" 2>/dev/null; b=$(git symbolic-ref --short HEAD 2>/dev/null); [ -n \"$b\" ] && printf \"🌿 %s\" \"$b\" || true",
+        "timeout": 1000,
+        "color": "hex:d2a8ff"
+      },
+      {
+        "id": "timer-icon",
+        "type": "custom-text",
+        "customText": "⏳ ",
+        "merge": "no-padding",
+        "color": "hex:8b949e"
+      },
+      {
+        "id": "timer",
+        "type": "block-timer",
+        "rawValue": true,
+        "color": "hex:8b949e"
+      }
+    ],
+    [],
+    []
+  ],
+  "flexMode": "full-minus-40",
+  "compactThreshold": 60,
+  "colorLevel": 3,
+  "defaultSeparator": "|",
+  "defaultPadding": "",
+  "inheritSeparatorColors": false,
+  "globalBold": false,
+  "gitCacheTtlSeconds": 5,
+  "minimalistMode": false,
+  "powerline": {
+    "enabled": false,
+    "separators": [
+      ""
+    ],
+    "separatorInvertBackground": [
+      false
+    ],
+    "startCaps": [
+      "",
+      "",
+      ""
+    ],
+    "endCaps": [],
+    "autoAlign": false,
+    "continueThemeAcrossLines": false,
+    "theme": "custom"
+  }
+}
