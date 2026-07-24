@@ -44,8 +44,10 @@ configuración? Clona el repo, corre **un comando** y listo:
 La barra muestra en una sola línea:
 
 ```
-📁 ~/mi-proyecto  🦉 Opus 4.8  🧠 42%  💪 high  🌿 main  ⏳ 1h23m
+📁 ~/mi-proyecto  🦉 Opus 4.8  🧠 42%  💪 high  📊 18.0%  ⏰ 07-23 7:20 PM  📅 26.0%  🔔 07-27 11:00 PM  🌿 main  ⏳ 1h23m
 ```
+
+> Las fechas de reestablecimiento se muestran en tu **hora local** (zona horaria del sistema), no en UTC.
 
 | Ícono | Muestra | Color |
 |:-----:|---------|-------|
@@ -53,6 +55,10 @@ La barra muestra en una sola línea:
 | 🦉 | Modelo activo | 🟢 `#79d9a0` |
 | 🧠 | Porcentaje de contexto usado | 🟩 `#7ee787` |
 | 💪 | Nivel de esfuerzo de razonamiento (*thinking effort*) | 🟡 `#e3b341` |
+| 📊 | % de uso de la sesión actual (igual que `/usage`) | 🟠 `#f78166` |
+| ⏰ | Fecha/hora de reestablecimiento del límite de sesión | 🟧 `#ffa657` |
+| 📅 | % de uso semanal (igual que `/usage`) | 🩵 `#56d4dd` |
+| 🔔 | Fecha/hora de reestablecimiento del límite semanal | 🌸 `#db61a2` |
 | 🌿 | Rama de git actual (solo dentro de un repo) | 🟣 `#d2a8ff` |
 | ⏳ | Temporizador del bloque de trabajo | ⚪ `#8b949e` |
 
@@ -138,9 +144,56 @@ cp ccstatusline-settings.json ~/.config/ccstatusline/settings.json
 
 ## 🎛️ Uso
 
-Una vez instalada, la barra aparece sola debajo de tu terminal de Claude Code. Para
-**personalizarla** (cambiar íconos, colores, orden, separadores, modo powerline…),
-ccstatusline trae un editor interactivo:
+Una vez instalada, la barra aparece sola debajo de tu terminal de Claude Code.
+
+### ✅ Elegir qué métricas mostrar
+
+Este repo trae un selector interactivo propio para activar/desactivar en vivo cada
+ícono de la barra (directorio, modelo, contexto, esfuerzo, uso de sesión/semanal,
+reestablecimientos, git, temporizador):
+
+```bash
+./ccstatusline-metrics.js
+```
+
+Controles:
+
+| Tecla | Acción |
+|:-----:|--------|
+| `↑` / `↓` | Mover el cursor |
+| `espacio` | Marcar/desmarcar la métrica |
+| `a` | Seleccionar todas |
+| `n` | Deseleccionar todas |
+| `enter` | Guardar e instalar |
+| `q` / `esc` | Cancelar sin cambios |
+
+Al guardar, regenera `ccstatusline-settings.json` con solo las métricas marcadas y lo
+instala directamente en `~/.config/ccstatusline/settings.json` (respaldando tu config
+previa, igual que `install.sh`). Solo reinicia Claude Code para verlo.
+
+> Este selector requiere una terminal real (TTY). Si lo corres desde dentro del chat
+> de Claude Code (por ejemplo con `!./ccstatusline-metrics.js`), fallará porque ese
+> entorno no provee una terminal interactiva — ábrelo en tu terminal del sistema.
+
+#### 🤖 Desde el propio chat de Claude Code
+
+El skill **`/ccstatusline-metrics`** está instalado a nivel de usuario
+(`~/.claude/skills/`), así que funciona desde cualquier proyecto, no solo desde
+este repo. Te pregunta qué métricas quieres activas con una selección múltiple
+nativa del chat (sin necesitar TTY) y aplica el cambio por ti, llamando
+internamente a:
+
+```bash
+node /home/efren/projects/ccstatusline-config/ccstatusline-metrics.js --list                 # ver métricas y su estado
+node /home/efren/projects/ccstatusline-config/ccstatusline-metrics.js --set dir,model,git    # dejar activas solo esas
+node /home/efren/projects/ccstatusline-config/ccstatusline-metrics.js --all                  # activar todas
+node /home/efren/projects/ccstatusline-config/ccstatusline-metrics.js --none                 # desactivar todas
+```
+
+### 🎨 Personalización avanzada
+
+Para cambiar colores, orden, separadores o modo powerline, ccstatusline trae su propio
+editor interactivo:
 
 ```bash
 npx ccstatusline@latest

@@ -58,6 +58,70 @@
         "color": "hex:e3b341"
       },
       {
+        "id": "usage-icon",
+        "type": "custom-text",
+        "customText": "📊 ",
+        "merge": "no-padding",
+        "color": "hex:f78166"
+      },
+      {
+        "id": "usage",
+        "type": "session-usage",
+        "rawValue": true,
+        "color": "hex:f78166"
+      },
+      {
+        "id": "session-reset-icon",
+        "type": "custom-text",
+        "customText": "⏰ ",
+        "merge": "no-padding",
+        "color": "hex:ffa657"
+      },
+      {
+        "id": "session-reset",
+        "type": "reset-timer",
+        "rawValue": true,
+        "color": "hex:ffa657",
+        "metadata": {
+          "absolute": "true",
+          "compact": "true",
+          "timezone": "local",
+          "hour12": "true"
+        }
+      },
+      {
+        "id": "week-icon",
+        "type": "custom-text",
+        "customText": "📅 ",
+        "merge": "no-padding",
+        "color": "hex:56d4dd"
+      },
+      {
+        "id": "week",
+        "type": "weekly-usage",
+        "rawValue": true,
+        "color": "hex:56d4dd"
+      },
+      {
+        "id": "reset-icon",
+        "type": "custom-text",
+        "customText": "🔔 ",
+        "merge": "no-padding",
+        "color": "hex:db61a2"
+      },
+      {
+        "id": "reset",
+        "type": "weekly-reset-timer",
+        "rawValue": true,
+        "color": "hex:db61a2",
+        "metadata": {
+          "absolute": "true",
+          "compact": "true",
+          "timezone": "local",
+          "hour12": "true"
+        }
+      },
+      {
         "id": "git",
         "type": "custom-command",
         "commandPath": "d=$(sed -n 's/.*\"cwd\":\"\\([^\"]*\\)\".*/\\1/p'); [ -n \"$d\" ] && cd \"$d\" 2>/dev/null; b=$(git symbolic-ref --short HEAD 2>/dev/null); [ -n \"$b\" ] && printf \"🌿 %s\" \"$b\" || true",
