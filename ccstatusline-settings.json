@@ -45,19 +45,6 @@
         "color": "hex:7ee787"
       },
       {
-        "id": "eff-icon",
-        "type": "custom-text",
-        "customText": "💪 ",
-        "merge": "no-padding",
-        "color": "hex:e3b341"
-      },
-      {
-        "id": "eff",
-        "type": "thinking-effort",
-        "rawValue": true,
-        "color": "hex:e3b341"
-      },
-      {
         "id": "usage-icon",
         "type": "custom-text",
         "customText": "📊 ",
@@ -103,43 +90,11 @@
         "color": "hex:56d4dd"
       },
       {
-        "id": "reset-icon",
-        "type": "custom-text",
-        "customText": "🔔 ",
-        "merge": "no-padding",
-        "color": "hex:db61a2"
-      },
-      {
-        "id": "reset",
-        "type": "weekly-reset-timer",
-        "rawValue": true,
-        "color": "hex:db61a2",
-        "metadata": {
-          "absolute": "true",
-          "compact": "true",
-          "timezone": "local",
-          "hour12": "true"
-        }
-      },
-      {
         "id": "git",
         "type": "custom-command",
         "commandPath": "d=$(sed -n 's/.*\"cwd\":\"\\([^\"]*\\)\".*/\\1/p'); [ -n \"$d\" ] && cd \"$d\" 2>/dev/null; b=$(git symbolic-ref --short HEAD 2>/dev/null); [ -n \"$b\" ] && printf \"🌿 %s\" \"$b\" || true",
         "timeout": 1000,
         "color": "hex:d2a8ff"
-      },
-      {
-        "id": "timer-icon",
-        "type": "custom-text",
-        "customText": "⏳ ",
-        "merge": "no-padding",
-        "color": "hex:8b949e"
-      },
-      {
-        "id": "timer",
-        "type": "block-timer",
-        "rawValue": true,
-        "color": "hex:8b949e"
       }
     ],
     [],
