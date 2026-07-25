@@ -55,9 +55,9 @@ La barra muestra en una sola línea:
 | 🦉 | Modelo activo | 🟢 `#79d9a0` |
 | 🧠 | Porcentaje de contexto usado | 🟩 `#7ee787` |
 | 💪 | Nivel de esfuerzo de razonamiento (*thinking effort*) | 🟡 `#e3b341` |
-| 📊 | % de uso de la sesión actual (igual que `/usage`) | 🟠 `#f78166` |
+| 📊 | % de uso de la sesión actual | 🟠 `#f78166` |
 | ⏰ | Fecha/hora de reestablecimiento del límite de sesión | 🟧 `#ffa657` |
-| 📅 | % de uso semanal (igual que `/usage`) | 🩵 `#56d4dd` |
+| 📅 | % de uso semanal | 🩵 `#56d4dd` |
 | 🔔 | Fecha/hora de reestablecimiento del límite semanal | 🌸 `#db61a2` |
 | 🌿 | Rama de git actual (solo dentro de un repo) | 🟣 `#d2a8ff` |
 | ⏳ | Temporizador del bloque de trabajo | ⚪ `#8b949e` |
@@ -184,10 +184,10 @@ nativa del chat (sin necesitar TTY) y aplica el cambio por ti, llamando
 internamente a:
 
 ```bash
-node /home/efren/projects/ccstatusline-config/ccstatusline-metrics.js --list                 # ver métricas y su estado
-node /home/efren/projects/ccstatusline-config/ccstatusline-metrics.js --set dir,model,git    # dejar activas solo esas
-node /home/efren/projects/ccstatusline-config/ccstatusline-metrics.js --all                  # activar todas
-node /home/efren/projects/ccstatusline-config/ccstatusline-metrics.js --none                 # desactivar todas
+node ~/ccstatusline-config/ccstatusline-metrics.js --list                 # ver métricas y su estado
+node ~/ccstatusline-config/ccstatusline-metrics.js --set dir,model,git    # dejar activas solo esas
+node ~/ccstatusline-config/ccstatusline-metrics.js --all                  # activar todas
+node ~/ccstatusline-config/ccstatusline-metrics.js --none                 # desactivar todas
 ```
 
 ### 🎨 Personalización avanzada
